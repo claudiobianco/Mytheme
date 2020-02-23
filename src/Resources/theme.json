@@ -1,0 +1,21 @@
+{
+  "name": "mytheme",
+  "author": "Claudio",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@mytheme"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/mytheme.js"
+  ],
+  "asset": [
+    "app/storefront/src/assets"
+  ]
+}

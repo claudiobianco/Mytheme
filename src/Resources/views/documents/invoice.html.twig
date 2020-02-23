@@ -1,0 +1,29 @@
+{% sw_extends '@Framework/documents/invoice.html.twig' %}
+
+{% block document_headline %}
+<h1>AAAA {% trans with {'%invoiceNumber%': config.custom.invoiceNumber} %}document.invoiceHeadline{% endtrans %}</h1>
+{% endblock %}
+
+{% block document_recipient %}
+    <span class="sender-address-small">
+        {% block document_recipient_sender %}
+            {{ config.companyAddress }}<br><br>
+        {% endblock %}
+    </span>
+    {% if billingAddress.company %}
+        {{ billingAddress.company }}<br>
+    {% endif %}
+    AAAA {{ customer.salutation.letterName }} {{ customer.firstName }} {{ customer.lastName }}<br>
+    {{ billingAddress.street }}<br>
+    {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
+    {{ billingAddress.country.name }}<br>
+{% endblock %}
+
+
+{% block document_body %}
+    {{ parent() }}
+
+    <div class="mt15">
+        Hier könnte ein toller und wichtiger Text stehen.
+    </div>
+{% endblock %}
